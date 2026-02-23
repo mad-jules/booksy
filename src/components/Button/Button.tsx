@@ -1,21 +1,28 @@
+import React from "react";
+import clsx from "clsx";
+
+import { ButtonSize, ButtonVariant } from "./types";
+
 import css from "./styles.module.css";
 
-interface Props {
-  isDisabled?: boolean;
-  text?: string;
-  style?: React.CSSProperties;
-  onClick: () => void;
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  variant?: `${ButtonVariant}`;
+  size?: `${ButtonSize}`;
 }
 
-export default function Button({ isDisabled, onClick, style, text }: Props) {
+export default function Button({
+  text,
+  variant = "primary",
+  className,
+  size = "medium",
+  type = "button",
+  ...rest
+}: Props) {
+  const classNames = [css.button, css[variant], css[size], className];
+
   return (
-    <button
-      className={css.button}
-      type="button"
-      style={style}
-      onClick={onClick}
-      disabled={isDisabled}
-    >
+    <button type={type} className={clsx(classNames)} {...rest}>
       {text}
     </button>
   );
