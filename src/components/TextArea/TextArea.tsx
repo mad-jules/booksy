@@ -9,6 +9,7 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   classNameLabel?: string;
   classNameWrapper?: string;
   classNameErrorMessage?: string;
+  name: string;
 }
 
 export default function TextArea({
@@ -21,10 +22,16 @@ export default function TextArea({
   name,
   ...rest
 }: Props) {
+  const isError = Boolean(errorMessage);
+
   return (
     <div className={clsx(css.wrapper, classNameWrapper)}>
       {label && (
-        <label htmlFor={name} className={clsx(css.label, classNameLabel)}>
+        <label
+          htmlFor={name}
+          className={clsx(css.label, classNameLabel)}
+          data-is-error={isError}
+        >
           {label}
         </label>
       )}
@@ -32,11 +39,14 @@ export default function TextArea({
         id={name}
         name={name}
         className={clsx(css["text-area"], className)}
+        data-is-error={isError}
         {...rest}
       />
-      <span className={clsx(css["error-message"], classNameErrorMessage)}>
-        {errorMessage}
-      </span>
+      {errorMessage && (
+        <span className={clsx(css["error-message"], classNameErrorMessage)}>
+          {errorMessage}
+        </span>
+      )}
     </div>
   );
 }
