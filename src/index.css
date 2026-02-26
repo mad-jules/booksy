@@ -50,9 +50,6 @@
   --color-scheme-3-foreground: var(--color-bamboo);
   --color-error-red: #ad0000;
 
-  --desktop-breakpoint: 1440px;
-  --tablet-breakpoint: 768px;
-
   --main-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
