@@ -26,13 +26,13 @@
   background-color: var(--color-neutral-darkest);
 }
 
-.primary:active {
-  background-color: var(--color-bamboo-dark);
-}
-
 .primary:hover,
 .primary:focus {
   background-color: var(--color-neutral-darkest);
+}
+
+.primary:active {
+  background-color: var(--color-bamboo-dark);
 }
 
 .secondary {
@@ -41,13 +41,13 @@
   color: var(--color-neutral-darkest);
 }
 
-.secondary:active {
-  background-color: var(--color-neutral-lighter);
-}
-
 .secondary:hover,
 .secondary:focus {
   background-color: var(--color-bamboo-light);
+}
+
+.secondary:active {
+  background-color: var(--color-neutral-lighter);
 }
 
 .medium {
