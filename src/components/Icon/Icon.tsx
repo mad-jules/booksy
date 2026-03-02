@@ -5,16 +5,14 @@ import { IconName } from "./types";
 
 import css from "./styles.module.css";
 
-interface Props {
-  name: `${IconName}`;
-  className?: string;
-  style?: React.CSSProperties;
+interface Props extends React.ComponentPropsWithoutRef<"svg"> {
+  iconName: `${IconName}`;
 }
 
-export function Icon({ name, className, style }: Props) {
+export function Icon({ iconName, className, ...rest }: Props) {
   return (
-    <svg className={clsx(css.svg, className)} style={style}>
-      <use href={`/assets/icon-sprite.svg#${name}`} />
+    <svg className={clsx(css.svg, className)} {...rest}>
+      <use href={`/assets/icon-sprite.svg#${iconName}`} />
     </svg>
   );
 }
