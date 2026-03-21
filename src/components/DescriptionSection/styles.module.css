@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-neutral-darkest);
+  margin-bottom: 24px;
+}
+
+.text {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-neutral-darkest);
+  margin-bottom: 32px;
+}
+
+.img {
+  max-width: 343px;
+  height: 248px;
+}
+
+@media screen and (min-width: 768px) {
+  .img {
+    max-width: 704px;
+    height: 474px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .text_wrapper {
+    max-width: 640px;
+  }
+
+  .img {
+    max-width: 640px;
+    height: 474px;
+  }
+}

@@ -1,10 +1,5 @@
-import Container from "../../components/Container/Container";
-import Section from "../../components/Section/Section";
+import DesriptionSection from "../../components/DescriptionSection/DescriptionSection";
 
 export default function Home() {
-  return (
-    <Section>
-      <Container>Home</Container>
-    </Section>
-  );
+  return <DesriptionSection />;
 }
