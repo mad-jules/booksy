@@ -1,8 +1,32 @@
 import Container from "../Container/Container";
-import Picture from "../Picture/Picture";
+import Picture, { type Source } from "../Picture/Picture";
 import Section from "../Section/Section";
 import css from "./styles.module.css";
 import clsx from "clsx";
+
+const sources = [
+  {
+    srcSet: [
+      "/assets/img/desktop-webp/layout-desktop.webp 1x",
+      "/assets/img/desktop-webp/layout-desktop@2x.webp 2x",
+    ],
+    media: "(min-width: 1440px)",
+  },
+  {
+    srcSet: [
+      "/assets/img/tablet-webp/layout-tablet.webp 1x",
+      "/assets/img/tablet-webp/layout-tablet@2x.webp 2x",
+    ],
+    media: "(min-width: 768px)",
+  },
+  {
+    srcSet: [
+      "/assets/img/mob-webp/layout-mob.webp 1x",
+      "/assets/img/mob-webp/layout-mob@2x.webp 2x",
+    ],
+    media: "(max-width: 767px)",
+  },
+] satisfies Source[];
 
 export default function DesriptionSection() {
   return (
@@ -20,12 +44,8 @@ export default function DesriptionSection() {
             </p>
           </div>
           <Picture
-            desktopPath1x="/assets/img/desktop-webp/layout-desktop.webp"
-            desktopPath2x="/assets/img/desktop-webp/layout-desktop@2x.webp"
-            mobPath1x="/assets/img/mob-webp/layout-mob.webp"
-            mobPath2x="/assets/img/mob-webp/layout-mob@2x.webp"
-            tabletPath1x="/assets/img/tablet-webp/layout-tablet.webp"
-            tabletPath2x="/assets/img/tablet-webp/layout-tablet@2x.webp"
+            sources={sources}
+            src="/assets/img/mob-webp/layout-mob.webp"
             alt="A man is reading in a library"
             classNameImg={css.img}
           />
