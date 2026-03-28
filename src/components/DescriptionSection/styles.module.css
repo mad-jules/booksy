@@ -42,11 +42,12 @@
   }
 
   .text_wrapper {
-    max-width: 640px;
+    flex: 1;
   }
 
   .img {
     max-width: 640px;
     height: 474px;
+    flex: 1;
   }
 }

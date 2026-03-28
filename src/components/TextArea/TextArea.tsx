@@ -6,6 +6,7 @@ import css from "./styles.module.css";
 interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   errorMessage?: string;
+  classNameTextarea: string;
   classNameLabel?: string;
   classNameWrapper?: string;
   classNameErrorMessage?: string;
@@ -15,7 +16,7 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 export default function TextArea({
   label,
   errorMessage,
-  className,
+  classNameTextarea,
   classNameLabel,
   classNameWrapper,
   classNameErrorMessage,
@@ -38,7 +39,7 @@ export default function TextArea({
       <textarea
         id={name}
         name={name}
-        className={clsx(css["text-area"], className)}
+        className={clsx(css["text-area"], classNameTextarea)}
         data-is-error={isError}
         {...rest}
       />
