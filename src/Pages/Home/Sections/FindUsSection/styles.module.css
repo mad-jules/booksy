@@ -1,0 +1,76 @@
+.contactWrapper {
+  display: flex;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+}
+
+.a {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #0b0500;
+  padding-left: 40px;
+}
+
+.li,
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ul {
+  gap: 24px;
+}
+
+.h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: #0b0500;
+  margin-bottom: 16px;
+}
+
+.h2 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+  margin-bottom: 24px;
+}
+
+.p {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #0b0500;
+}
+
+.texWrapper,
+.address {
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 80px;
+  }
+
+  .texWrapper,
+  .address {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
