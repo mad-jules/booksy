@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import L from "leaflet";
 import {
   MapContainer,
   TileLayer,
@@ -11,6 +12,16 @@ import PopupComponent, { type PopUpContent } from "./PopupComponent";
 
 import css from "./styles.module.css";
 import "leaflet/dist/leaflet.css";
+
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+const DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 export interface MarkerProps extends PopUpContent {
   coords: [number, number];
