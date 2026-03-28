@@ -16,4 +16,5 @@ export enum IconName {
   MenuAltRight = "menu-alt-right",
   Envelope = "envelope",
   Phone = "phone",
+  Clock = "clock",
 }
